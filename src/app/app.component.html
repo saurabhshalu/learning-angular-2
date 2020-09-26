@@ -1,0 +1,11 @@
+<div>
+  <h1>Task Manager</h1>
+  <input type="text" name="task" placeholder="Enter Your task" [(ngModel)]=taskData>
+  <input type="button" value="Add Task" (click)="addTask()">
+  <div *ngFor="let x of taskList.reverse();, let i = index">
+    <input #sts type="checkbox" [checked]="x.done" (click)="updateTask(sts.checked,i)">
+    <span [ngClass]="{'ifDone':x.done}">{{ x.title }}</span>
+    <input type="button" value="Delete Task" (click)="deleteTask(i)">
+  </div>
+  <input *ngIf="taskList.length > 0; " type="button" value="Clear Task" (click)="clearTask()">
+</div>
