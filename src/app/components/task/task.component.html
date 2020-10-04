@@ -1,29 +1,59 @@
-<div>
+<div class="wrapper">
+  <div class="container">
+    <div>
+      <input
+        type="text"
+        name="task"
+        id="taskName"
+        placeholder="Enter Your task"
+        [(ngModel)]="taskData"
+      />
+      <input
+        id="addTask"
+        *ngIf="!isEditMode"
+        type="button"
+        value="Add Task"
+        (click)="addTask()"
+      />
+      <input
+        id="updateTask"
+        *ngIf="isEditMode"
+        type="button"
+        value="Update Task"
+        (click)="updateTask()"
+      />
+    </div>
   
-    <input type="text" name="task" placeholder="Enter Your task" [(ngModel)]=taskData>
-    <input *ngIf="!isEditMode" type="button" value="Add Task" (click)="addTask()">
-    <input *ngIf="isEditMode" type="button" value="Update Task" (click)="updateTask()">
-    <table>
+    <table *ngIf="taskList.length > 0">
+      <thead>
+        <th>Task List</th>
+        <th colspan="2" style="text-align: center;">Actions</th>
+      </thead>
       <tr *ngFor="let x of taskList.reverse(); let i = index">
-        <td>
-          <input #sts type="checkbox" [checked]="x.done" (click)="updateTaskState(sts.checked,i)">
+        <td class="taskCol">
+          <input
+            #sts
+            type="checkbox"
+            [checked]="x.done"
+            (click)="updateTaskState(sts.checked, i)"
+          />
+          <span [ngClass]="{ ifDone: x.done }">{{ x.title }}</span>
         </td>
-        <td>
-          <span [ngClass]="{'ifDone':x.done}">{{ x.title }}</span>
+        <td class="editCol" >
+          <input class="editButton" type="button" value="Edit" (click)="editTask(i)" />
         </td>
-        <td>
-          <input type="button" value="Edit" (click)="editTask(i)">
-        </td>
-        <td>
-          <input type="button" value="Delete" (click)="deleteTask(i)">
+        <td class="deleteCol">
+          <input class="deleteButton" type="button" value="Delete" (click)="deleteTask(i)" />
         </td>
       </tr>
     </table>
-    <!-- <div *ngFor="let x of taskList.reverse();, let i = index">
-      <input #sts type="checkbox" [checked]="x.done" (click)="updateTaskState(sts.checked,i)">
-      <span [ngClass]="{'ifDone':x.done}">{{ x.title }}</span>
-      <input type="button" value="Edit" (click)="editTask(i)">
-      <input type="button" value="Delete" (click)="deleteTask(i)">
-    </div> -->
-    <input *ngIf="taskList.length > 0; " type="button" value="Clear Task" (click)="clearTask()">
+    <input
+      *ngIf="taskList.length > 0"
+      id="clearTask"
+      type="button"
+      value="Clear Task"
+      (click)="clearTask()"
+    />
   </div>
+
+</div>

@@ -2,3 +2,114 @@
     text-decoration: line-through;
     color: red;
 }
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+}
+
+#taskName {
+    padding: 10px;
+    margin: 2px;
+    width: 300px;
+    height: 20px;
+}
+
+#addTask, #updateTask {
+    width: 100px;
+    height: 40px;
+    margin: 10px;
+    cursor: pointer;
+    border: 0px;
+}
+
+#addTask {
+    font-weight: 600;
+    background: #5cb85c;
+}
+
+#addTask:hover {
+    background: #3cbd3c;
+}
+
+
+#updateTask {
+    background: #f0ad4e;
+}
+
+#updateTask:hover {
+    background: #eb9011;
+    font-weight: bold;
+}
+
+#clearTask {
+    height: 40px;
+    border: 0px;
+    margin: 0% 10% 0% 10%;
+    background: #d9534f;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+#clearTask:hover {
+    background: #dd3d37;
+}
+
+table {
+    width: 100%;
+    table-layout: auto;
+    display: block;
+    margin: 10px 0px 10px 0px;
+}
+
+.editCol, .deleteCol {
+    text-align: center;
+}
+
+.taskCol {
+    width: 100%;
+}
+
+th {
+    height: 25px;
+}
+th, td {
+    border-bottom: 1px solid #ddd;
+}
+
+td {
+    font-size: 18px;
+    padding: 5px;
+}
+
+.editButton,  .deleteButton {
+    width: 70px;
+    height: 25px;
+    border: 0px;
+    cursor: pointer;
+}
+
+
+.editButton {
+    background: #5bc0de;
+}
+.editButton:hover {
+    background: #0275d8;
+}
+
+.deleteButton {
+    color: white;
+    background: #da2e28;
+}
+
+.deleteButton:hover {
+    background: #d9534f;
+}
