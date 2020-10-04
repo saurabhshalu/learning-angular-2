@@ -24,7 +24,7 @@
       />
     </div>
   
-    <table>
+    <table *ngIf="taskList.length > 0">
       <thead>
         <th>Task List</th>
         <th colspan="2" style="text-align: center;">Actions</th>
@@ -40,10 +40,10 @@
           <span [ngClass]="{ ifDone: x.done }">{{ x.title }}</span>
         </td>
         <td class="editCol" >
-          <input type="button" value="Edit" (click)="editTask(i)" />
+          <input class="editButton" type="button" value="Edit" (click)="editTask(i)" />
         </td>
         <td class="deleteCol">
-          <input type="button" value="Delete" (click)="deleteTask(i)" />
+          <input class="deleteButton" type="button" value="Delete" (click)="deleteTask(i)" />
         </td>
       </tr>
     </table>
