@@ -2,3 +2,82 @@
     text-decoration: line-through;
     color: red;
 }
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+}
+
+#taskName {
+    padding: 10px;
+    margin: 2px;
+    width: 300px;
+    height: 20px;
+}
+
+#addTask, #updateTask {
+    width: 100px;
+    height: 40px;
+    margin: 10px;
+    cursor: pointer;
+    border: 0px;
+}
+
+#addTask {
+    color: white;
+    background: #0275d8;
+}
+
+#addTask:hover {
+    background: #3d94e0;
+    font-weight: bold;
+}
+
+
+#updateTask {
+    background: #f0ad4e;
+}
+
+#updateTask:hover {
+    background: #ecb972;
+    font-weight: bold;
+}
+
+#clearTask {
+    height: 40px;
+    border: 0px;
+    margin: 0% 10% 0% 10%;
+}
+
+table {
+    width: 100%;
+    table-layout: auto;
+    display: block;
+    margin: 10px 0px 10px 0px;
+}
+
+.editCol, .deleteCol {
+    text-align: center;
+}
+
+.taskCol {
+    width: 100%;
+}
+
+th {
+    height: 25px;
+}
+th, td {
+    border-bottom: 1px solid #ddd;
+}
+
+td {
+    font-size: 18px;
+    padding: 5px;
+}
